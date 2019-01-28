@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Driver {
+public class DriverAdder {
     public static void main(String[] args) {
 
         String url = "jdbc:mysql://localhost:3306/demo?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -23,9 +23,7 @@ public class Driver {
             ResultSet resultSet = myStatement.executeQuery("select * from employees");
 
             // 4. Process the results
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("last_name") + ", " + resultSet.getString("first_name"));
-            }
+            Displayer.display(resultSet);
 
         } catch (Exception exc) {
             exc.printStackTrace();

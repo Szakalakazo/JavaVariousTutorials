@@ -14,7 +14,6 @@ public class DatabaseMeta {
             DatabaseMetaData databaseMetaData = myCon.getMetaData();
 
             System.out.println("Product name: " + databaseMetaData.getDatabaseProductName());
-            ;
             System.out.println("Product version: " + databaseMetaData.getDatabaseProductVersion());
             System.out.println();
 
